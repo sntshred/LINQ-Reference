@@ -1,10 +1,13 @@
 <Query Kind="Statements">
   <Connection>
-    <ID>3ae3f2a1-31be-4180-bec4-adfafbf22ab2</ID>
+    <ID>4b448f71-8406-4626-9c80-f75f8411246f</ID>
     <Persist>true</Persist>
-    <Server>CHOUHANS-PC</Server>
-    <Database>Employee</Database>
-    <ShowServer>true</ShowServer>
+    <Driver>EntityFrameworkDbContext</Driver>
+    <CustomAssemblyPathEncoded>&lt;MyDocuments&gt;\Visual Studio 2017\Projects\EF_CodeFirst\FluenAPI\EF_FluenAPI\DAL\bin\Debug\DAL.dll</CustomAssemblyPathEncoded>
+    <CustomAssemblyPath>C:\Users\Chouhans\Documents\Visual Studio 2017\Projects\EF_CodeFirst\FluenAPI\EF_FluenAPI\DAL\bin\Debug\DAL.dll</CustomAssemblyPath>
+    <CustomTypeName>DAL.Model.EmployeeEntities</CustomTypeName>
+    <AppConfigPath>C:\Users\Chouhans\Documents\Visual Studio 2017\Projects\EF_CodeFirst\FluenAPI\EF_FluenAPI\DAL\App.config</AppConfigPath>
+    <DisplayName>DLL</DisplayName>
   </Connection>
 </Query>
 
@@ -242,6 +245,33 @@
 //							.First() 
 //							.Select(ord=>ord.Salary) 
 //							.Distinct();
+
+
+
+//Lazy Loading / Deffered Loading
+
+//var f = from p in Depts select p;
+//foreach(var pi in f){
+// Console.Write("Depts :{0} ", pi.DName +"\n");
+//  foreach(var di in pi.Emps){
+//  Console.WriteLine("Emps :{0} ",di.Ename);
+//  }
+// Console.WriteLine();
+//  }
+
+//Eager Loading
+
+var f = from p in Depts.Include("Emps") select p;
+foreach(var pi in f){
+ Console.Write("Depts :{0} ", pi.DName +"\n");
+  foreach(var di in pi.Emps){
+  Console.WriteLine("Emps :{0} ",di.Ename);
+  }
+ Console.WriteLine();
+  }
+
+
+
 
 
 
