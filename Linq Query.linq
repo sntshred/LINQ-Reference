@@ -1,16 +1,3 @@
-<Query Kind="Statements">
-  <Connection>
-    <ID>4b448f71-8406-4626-9c80-f75f8411246f</ID>
-    <Persist>true</Persist>
-    <Driver>EntityFrameworkDbContext</Driver>
-    <CustomAssemblyPathEncoded>&lt;MyDocuments&gt;\Visual Studio 2017\Projects\EF_CodeFirst\FluenAPI\EF_FluenAPI\DAL\bin\Debug\DAL.dll</CustomAssemblyPathEncoded>
-    <CustomAssemblyPath>C:\Users\Chouhans\Documents\Visual Studio 2017\Projects\EF_CodeFirst\FluenAPI\EF_FluenAPI\DAL\bin\Debug\DAL.dll</CustomAssemblyPath>
-    <CustomTypeName>DAL.Model.EmployeeEntities</CustomTypeName>
-    <AppConfigPath>C:\Users\Chouhans\Documents\Visual Studio 2017\Projects\EF_CodeFirst\FluenAPI\EF_FluenAPI\DAL\App.config</AppConfigPath>
-    <DisplayName>DLL</DisplayName>
-  </Connection>
-</Query>
-
 //select * from Customer
 
 //Query based Syntax
@@ -261,45 +248,20 @@
 
 //Eager Loading
 
-var f = from p in Depts.Include("Emps") select p;
-foreach(var pi in f){
- Console.Write("Depts :{0} ", pi.DName +"\n");
-  foreach(var di in pi.Emps){
-  Console.WriteLine("Emps :{0} ",di.Ename);
-  }
- Console.WriteLine();
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
-
-
-
-
-	
-	 
-
-
+//var f = from p in Depts.Include("Emps") select p;
+//foreach(var pi in f){
+// Console.Write("Depts :{0} ", pi.DName +"\n");
+//  foreach(var di in pi.Emps){
+//  Console.WriteLine("Emps :{0} ",di.Ename);
+//  }
+// Console.WriteLine();
+//  }
+//
+//
+// var resultSet = allResults.Where(x=>x.IsActive
+//                                  .Distinct()
+//                                  .GroupBy(x=>x.StringValue)
+//                                  .Select(x=>new {x.Key, x.Count()})
+//                                  .OrderBy(x=>x.Key)
+//                                  .ToList();
 
